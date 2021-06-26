@@ -11,8 +11,17 @@
 |
 */
 
-Route::get('/teste', function () {
+Route::get('/cadastro', function () {
     return view('cadastro');
+});
+
+Route::get('/lista', function () {
+    return view('listar');
+});
+
+
+Route::post('/inserir', function () {
+    echo "entrou aqui no cadastrar";
 });
 
 Auth::routes();
