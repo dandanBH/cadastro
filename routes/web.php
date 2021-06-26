@@ -11,17 +11,12 @@
 |
 */
 
-Route::get('/cadastro', function () {
-    return view('cadastro');
-});
+use App\Http\Controllers\PessoaController;
 
-Route::get('/lista', function () {
-    return view('listar');
-});
 
-Route::get('/create/user','UserController@create');
-
-Route::post('/inserir/user','UserController@store');
+Route::get('/','PessoaController@index');
+Route::get('/create/pessoa','PessoaController@create');
+Route::post('/inserir/pessoa','PessoaController@store');
 
 
 

@@ -9,21 +9,32 @@
             <div class="card">
             <div class="card-header">
             <div class="col-md-9">
-                <a href ="{{url('/create/user')}}">
+                <a href ="{{url('/create/pessoa')}}">
                     <button class="btn btn-success">Cadastrar Novo</button>
                 </a>
             </div>
             </div>
-              
-
                 <div class="card-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Morbi leo risus</li>
-                        <li class="list-group-item">Porta ac consectetur ac</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
-                    </ul>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Nome</th>
+                            <th>Tipo</th>
+                            <th>Foto</th>
+                            <th>visualizar</th>
+                            <th width="280px">Editar</th>
+                        </tr>
+                        @foreach($pessoas as $pessoa)
+                            <tr>
+                                <td>{{$pessoa->nome}}</td>
+                                <td>{{$pessoa->tipo}}</td>
+
+                            </tr>
+                        @endforeach
+                    </table>
+
+
+
+
                 </div>
             </div>
         </div>

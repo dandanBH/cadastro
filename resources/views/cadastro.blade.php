@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">Cadastro</div>
                 <div class="card-body">
-                    <form role="form" method="POST" action="{{ url('/inserir/user') }}">
+                    <form role="form" method="POST" action="{{ url('/inserir/pessoa') }}">
                     <input type="hidden" value="{{csrf_token()}}" name="_token" />
 
                         <div class="form-group">
