@@ -13,16 +13,16 @@
                         <div class="form-group">
                            
                             <label for="nome">Nome</label>
-                            <input type="text" class="form-control" id="nome" placeholder="Seu Nome">
+                            <input type="text" class="form-control" id="nome"  name="nome" placeholder="Seu Nome">
                         </div>
                         <div class="form-group">
                             <label for="foto">Foto</label>
-                            <input type="file" class="form-control" id="foto" placeholder="Escolha sua Foto">
+                            <input type="file" class="form-control" id="foto" name="foto" placeholder="Escolha sua Foto">
                         </div>
 
                         <div class="form-group">
                             <label for="tipo">Tipo Usuario</label>
-                            <select class="form-control" id="tipo">
+                            <select class="form-control" id="tipo" name="tipo">
                                 <option value="Administrador">Administrador</option>
                                 <option value="Operador">Operador</option>
                             </select>

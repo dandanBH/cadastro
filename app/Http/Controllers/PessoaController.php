@@ -36,16 +36,10 @@ class PessoaController extends Controller
      */
     public function store(Request $request)
     {
-        $pessoa = new Pessoa();
-        dd($pessoa);
-        $data = $this->validate($request, [
-            'nome'=>'required',
-            'tipo'=> 'required'
-        ]);
-
-        $pessoa->salvaPessoa($data);
+        $input = $request->all();
+        Pessoa::create($input);
         // return redirect('/lista')->with('success', 'New support ticket has been created! Wait sometime to get resolved');
-
+        return redirect('/')->with('success', 'New support ticket has been created! Wait sometime to get resolved');
     }
 
     /**
@@ -88,8 +82,14 @@ class PessoaController extends Controller
      * @param  \App\Pessoa  $pessoa
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pessoa $pessoa)
+    public function destroy($id)
     {
-        //
+
+        $pessoa = Pessoa::find($id);
+        $pessoa->delete();
+
+
+        return redirect('/')->with('success', 'New support ticket has been created! Wait sometime to get resolved');
+
     }
 }

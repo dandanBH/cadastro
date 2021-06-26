@@ -27,6 +27,17 @@
                             <tr>
                                 <td>{{$pessoa->nome}}</td>
                                 <td>{{$pessoa->tipo}}</td>
+                                <td></td>
+                                <td>Editar</td>
+                                <td>
+                                    <form action="{{action('PessoaController@destroy', $pessoa->id)}}" method="post">
+                                        {{csrf_field()}}
+                                        <input name="_method" type="hidden" value="DELETE">
+                                        <button class="btn btn-danger" type="submit">Excluir</button>
+                                    </form>
+
+
+                                </td>
 
                             </tr>
                         @endforeach

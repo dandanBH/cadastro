@@ -18,6 +18,8 @@ Route::get('/','PessoaController@index');
 Route::get('/create/pessoa','PessoaController@create');
 Route::post('/inserir/pessoa','PessoaController@store');
 
+Route::delete('/delete/pessoa/{id}','PessoaController@destroy');
+
 
 
 
