@@ -9,7 +9,7 @@
             <div class="card">
             <div class="card-header">
             <div class="col-md-9">
-                <a href ="{{url('/cadastro')}}">
+                <a href ="{{url('/create/user')}}">
                     <button class="btn btn-success">Cadastrar Novo</button>
                 </a>
             </div>

@@ -7,10 +7,11 @@
             <div class="card">
                 <div class="card-header">Cadastro</div>
                 <div class="card-body">
-                    <form role="form" method="POST" action="{{ url('/cadastro') }}">
-                        {!! csrf_field() !!}
+                    <form role="form" method="POST" action="{{ url('/inserir/user') }}">
+                    <input type="hidden" value="{{csrf_token()}}" name="_token" />
 
                         <div class="form-group">
+                           
                             <label for="nome">Nome</label>
                             <input type="text" class="form-control" id="nome" placeholder="Seu Nome">
                         </div>

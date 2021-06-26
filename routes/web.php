@@ -19,12 +19,12 @@ Route::get('/lista', function () {
     return view('listar');
 });
 
+Route::get('/create/user','UserController@create');
 
-Route::post('/inserir', function () {
-    echo "entrou aqui no cadastrar";
-});
+Route::post('/inserir/user','UserController@store');
 
-Auth::routes();
+
+
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
