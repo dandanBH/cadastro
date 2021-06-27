@@ -5,15 +5,13 @@
     <div class="row justify-content-md-left mt-5">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Cadastro</div>
+                <div class="card-header"><b>Cadastro de Usuário</b></div>
                 <div class="card-body">
                     <form role="form" method="POST" enctype="multipart/form-data" action="{{ url('/inserir/pessoa') }}">
                     <input type="hidden" value="{{csrf_token()}}" name="_token" />
-
                         <div class="form-group">
-                           
                             <label for="nome">Nome</label>
-                            <input type="text" class="form-control" id="nome"  name="nome" placeholder="Seu Nome">
+                            <input type="text" required class="form-control" id="nome"  name="nome" placeholder="Seu Nome">
                         </div>
                         <div class="form-group">
                             <label for="foto">Foto</label>

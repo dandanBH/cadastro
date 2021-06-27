@@ -14,7 +14,7 @@ class PessoaController extends Controller
      */
     public function index()
     {
-        $pessoas = Pessoa::all();
+        $pessoas = Pessoa::all()->sortByDesc("id");
         return view('listar',compact('pessoas'));
     }
 

@@ -5,25 +5,25 @@
     <div class="row justify-content-md-left mt-5">
         <div class="col-md-12">
             <div class="card">
-
-
-
-
-
-                <div class="card-header">Altera Usuario</div>
+                <div class="card-header"><b>Altera Usuário</b></div>
                 <div class="card-body">
                     <form role="form" method="POST" enctype="multipart/form-data" action="{{ url('/update/pessoa/'.$pessoa->id) }}">
                     <input type="hidden" value="{{csrf_token()}}" name="_token" />
-
+                        <div class="form-group">
+                            <img src="{{url('storage/img/'.$pessoa->foto)}}" width="100" height="100">
+                        </div>
                         <div class="form-group">
                            
                             <label for="nome">Nome</label>
-                            <input type="text" class="form-control" id="nome"  value="{{$pessoa->nome}}" name="nome" placeholder="Seu Nome">
+                            <input type="text" class="form-control" id="nome" required  value="{{$pessoa->nome}}" name="nome" placeholder="Seu Nome">
                         </div>
                         <div class="form-group">
                             <label for="foto">Foto</label>
                             <input type="file" class="form-control-file" id="foto" name="foto" placeholder="Escolha sua Foto">
                         </div>
+
+
+
 
                         <div class="form-group">
                             <label for="tipo">Tipo Usuario</label>
