@@ -43,7 +43,7 @@
                                     <form action="{{action('PessoaController@destroy', $pessoa->id)}}" method="post">
                                         {{csrf_field()}}
                                         <input name="_method" type="hidden" value="DELETE">
-                                        <button class="btn btn-danger" type="submit" placeholder="Excluir Usuario"> <i class="fas fa-user-minus"></i></button>
+                                        <button class="btn btn-danger" type="submit" placeholder="Excluir Usuario"  onclick="return confirm('Tem certeza que deseja deletar este registro?')"> <i class="fas fa-user-minus"></i></button>
                                     </form>
 
 
