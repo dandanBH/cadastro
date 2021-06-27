@@ -28,7 +28,16 @@
                                 <td>{{$pessoa->nome}}</td>
                                 <td>{{$pessoa->tipo}}</td>
                                 <td><img src="{{url('storage/img/'.$pessoa->foto)}}" width="80" height="80"></td>
-                                <td>Editar</td>
+
+
+                                <td>
+                                <a href="{{url('/edit/pessoa/'.$pessoa->id)}}">Editar</a>
+
+
+
+                                </td>
+
+
                                 <td>
                                     <form action="{{action('PessoaController@destroy', $pessoa->id)}}" method="post">
                                         {{csrf_field()}}

@@ -75,9 +75,12 @@ class PessoaController extends Controller
      * @param  \App\Pessoa  $pessoa
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pessoa $pessoa)
+    public function edit($id)
     {
-        //
+
+        $pessoa = Pessoa::where('id', $id)->first();
+
+        return view('altera',compact('pessoa'));
     }
 
     /**

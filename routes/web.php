@@ -16,6 +16,8 @@ use App\Http\Controllers\PessoaController;
 
 Route::get('/','PessoaController@index');
 Route::get('/create/pessoa','PessoaController@create');
+
+Route::get('/edit/pessoa/{id}','PessoaController@edit');
 Route::post('/inserir/pessoa','PessoaController@store');
 
 Route::delete('/delete/pessoa/{id}','PessoaController@destroy');
