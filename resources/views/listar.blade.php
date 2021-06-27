@@ -27,7 +27,7 @@
                             <tr>
                                 <td>{{$pessoa->nome}}</td>
                                 <td>{{$pessoa->tipo}}</td>
-                                <td></td>
+                                <td><img src="{{url('storage/img/'.$pessoa->foto)}}" width="80" height="80"></td>
                                 <td>Editar</td>
                                 <td>
                                     <form action="{{action('PessoaController@destroy', $pessoa->id)}}" method="post">

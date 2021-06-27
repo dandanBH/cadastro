@@ -36,10 +36,26 @@ class PessoaController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-        Pessoa::create($input);
-        // return redirect('/lista')->with('success', 'New support ticket has been created! Wait sometime to get resolved');
+
+       $pessoa = new Pessoa;
+       $pessoa->nome = $request->nome;
+       $pessoa->tipo = $request->tipo;
+
+        if ($request->hasFile('foto') && $request->file('foto')->isValid()){
+            $foto = $request->foto;
+            $hashFoto = md5($foto->getClientOriginalName().strtotime("now"));
+
+            $extension = $request->foto->extension();
+            $nomeFoto = "{$hashFoto}.{$extension}";
+            $request->foto->storeAs('img',$nomeFoto); //upload
+            $pessoa->foto =$nomeFoto;
+
+
+            //dd($request->foto->extension());
+        }
+        $pessoa->save();
         return redirect('/')->with('success', 'New support ticket has been created! Wait sometime to get resolved');
+
     }
 
     /**

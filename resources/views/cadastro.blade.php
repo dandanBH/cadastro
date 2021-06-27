@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">Cadastro</div>
                 <div class="card-body">
-                    <form role="form" method="POST" action="{{ url('/inserir/pessoa') }}">
+                    <form role="form" method="POST" enctype="multipart/form-data" action="{{ url('/inserir/pessoa') }}">
                     <input type="hidden" value="{{csrf_token()}}" name="_token" />
 
                         <div class="form-group">
@@ -17,7 +17,7 @@
                         </div>
                         <div class="form-group">
                             <label for="foto">Foto</label>
-                            <input type="file" class="form-control" id="foto" name="foto" placeholder="Escolha sua Foto">
+                            <input type="file" class="form-control-file" id="foto" name="foto" placeholder="Escolha sua Foto">
                         </div>
 
                         <div class="form-group">
