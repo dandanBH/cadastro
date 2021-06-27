@@ -12,7 +12,7 @@
 
                 <div class="card-header">Altera Usuario</div>
                 <div class="card-body">
-                    <form role="form" method="POST" enctype="multipart/form-data" action="{{ url('/inserir/pessoa') }}">
+                    <form role="form" method="POST" enctype="multipart/form-data" action="{{ url('/update/pessoa/'.$pessoa->id) }}">
                     <input type="hidden" value="{{csrf_token()}}" name="_token" />
 
                         <div class="form-group">
@@ -37,7 +37,7 @@
                                 @endif;
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        <button type="submit" class="btn btn-primary ">Alterar</button>
 
                     </form>
                 </div>

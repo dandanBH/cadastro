@@ -50,11 +50,9 @@ class PessoaController extends Controller
             $request->foto->storeAs('img',$nomeFoto); //upload
             $pessoa->foto =$nomeFoto;
 
-
-            //dd($request->foto->extension());
         }
         $pessoa->save();
-        return redirect('/')->with('success', 'New support ticket has been created! Wait sometime to get resolved');
+        return redirect('/')->with('success', 'Cadastrado');
 
     }
 
@@ -92,7 +90,27 @@ class PessoaController extends Controller
      */
     public function update(Request $request, Pessoa $pessoa)
     {
-        //
+
+        $data = $request->all();
+
+        if ($request->hasFile('foto') && $request->file('foto')->isValid()){
+            $foto = $request->foto;
+            $hashFoto = md5($foto->getClientOriginalName().strtotime("now"));
+
+            $extension = $request->foto->extension();
+            $nomeFoto = "{$hashFoto}.{$extension}";
+            $request->foto->storeAs('img',$nomeFoto); //upload
+
+            $data['foto'] =$nomeFoto;
+
+        }
+
+
+       Pessoa::findOrFail($request->id)->update($data);
+       return redirect('/')->with('success', 'Alterado');
+
+
+
     }
 
     /**
