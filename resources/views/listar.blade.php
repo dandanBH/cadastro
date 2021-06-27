@@ -20,18 +20,19 @@
                             <th>Nome</th>
                             <th>Tipo</th>
                             <th>Foto</th>
-                            <th>visualizar</th>
-                            <th width="280px">Editar</th>
+                            <th>Alterar</th>
+                            <th>Excluir</th>
                         </tr>
-                        @foreach($pessoas as $pessoa)
+
+                    @foreach($pessoas as $pessoa)
                             <tr>
                                 <td>{{$pessoa->nome}}</td>
                                 <td>{{$pessoa->tipo}}</td>
-                                <td><img src="{{url('storage/img/'.$pessoa->foto)}}" width="80" height="80"></td>
+                                <td><img src="{{url('storage/img/'.$pessoa->foto)}}" width="60" height="60"></td>
 
 
                                 <td>
-                                <a href="{{url('/edit/pessoa/'.$pessoa->id)}}">Editar</a>
+                                <a href="{{url('/edit/pessoa/'.$pessoa->id)}}"><i class="fas fa-pencil-alt"></i></a>
 
 
 
@@ -42,7 +43,7 @@
                                     <form action="{{action('PessoaController@destroy', $pessoa->id)}}" method="post">
                                         {{csrf_field()}}
                                         <input name="_method" type="hidden" value="DELETE">
-                                        <button class="btn btn-danger" type="submit">Excluir</button>
+                                        <button class="btn btn-danger" type="submit" placeholder="Excluir Usuario"> <i class="fas fa-user-minus"></i></button>
                                     </form>
 
 
