@@ -21,6 +21,7 @@ Route::get('/edit/pessoa/{id}','PessoaController@edit');
 Route::post('/inserir/pessoa','PessoaController@store');
 Route::post('/update/pessoa/{id}','PessoaController@update');
 
+Route::get('/lucid','PessoaController@viewLucid');
 
 
 Route::delete('/delete/pessoa/{id}','PessoaController@destroy');

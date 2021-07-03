@@ -28,6 +28,10 @@ class PessoaController extends Controller
         return view('cadastro');
     }
 
+    public function viewLucid(){
+        return view('lucid');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
